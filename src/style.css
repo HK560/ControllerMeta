@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+/* ControllerMeta Design System */
+:root {
+  --cs-bg-primary: #0f1117;
+  --cs-bg-card: #1a1d27;
+  /* Card RGB for glass effect (matches --cs-bg-card) */
+  --cs-card-rgb: 26, 29, 39;
+  --cs-bg-card-hover: #22263a;
+  --cs-border: #2a2e3e;
+  --cs-text-primary: #e4e6ef;
+  --cs-text-secondary: #8b8fa3;
+  --cs-accent-blue: #4f8cff;
+  --cs-accent-green: #34d399;
+  --cs-accent-red: #f43f5e;
+  --cs-accent-orange: #fb923c;
+  --cs-accent-purple: #a78bfa;
+  --cs-dot-color: #f43f5e;
+  --cs-grid-color: rgba(255, 255, 255, 0.06);
+  --cs-circle-color: rgba(79, 140, 255, 0.4);
+  --cs-bg-tooltip: #22262a;
+  --cs-text-tooltip: #ffffff;
+  --cs-grid-line: rgba(255, 255, 255, 0.08);
+  --cs-viz-bg: #1a1d27;
+  --cs-viz-stroke: #2f3446;
+  --cs-viz-stroke-focus: #4f8cff;
+  --cs-viz-text: #8b8fa3;
+  --cs-viz-text-muted: #4b4e63;
+  --cs-viz-dot: #f43f5e;
+  --cs-viz-circle: rgba(79, 140, 255, 0.4);
+  --cs-viz-glass: rgba(255, 255, 255, 0.03);
+  --cs-viz-glow-blue: 0 0 15px rgba(79, 140, 255, 0.4);
+  --cs-viz-glow-red: 0 0 15px rgba(244, 63, 94, 0.4);
+  --cs-log-bg: rgba(0, 0, 0, 0.25);
+
+  /* Background image layer (set dynamically via JS) */
+  --cs-bg-image: none;
+  --cs-bg-size: cover;
+  --cs-bg-position: center;
+  --cs-bg-repeat: no-repeat;
+  --cs-bg-brightness: 1;
+  --cs-bg-blur: 0px;
+
+  /* Glass / frosted panel effect */
+  --cs-glass-opacity: 0.75;
+  --cs-glass-blur: 14px;
+}
+
+[data-theme='light'] {
+  --cs-card-rgb: 255, 255, 255;
+  --cs-bg-primary: #f8fafc;
+  --cs-bg-card: #ffffff;
+  --cs-bg-card-hover: #f1f5f9;
+  --cs-border: #e2e8f0;
+  --cs-text-primary: #1e293b;
+  --cs-text-secondary: #64748b;
+  --cs-accent-blue: #3b82f6;
+  --cs-accent-green: #10b981;
+  --cs-accent-red: #ef4444;
+  --cs-accent-orange: #f59e0b;
+  --cs-accent-purple: #8b5cf6;
+  --cs-dot-color: #ef4444;
+  --cs-grid-color: rgba(0, 0, 0, 0.04);
+  --cs-circle-color: rgba(59, 130, 246, 0.2);
+  --cs-bg-tooltip: #1e293b;
+  --cs-text-tooltip: #ffffff;
+  --cs-grid-line: rgba(0, 0, 0, 0.06);
+  --cs-viz-bg: #f1f5f9;
+  --cs-viz-stroke: #cbd5e1;
+  --cs-viz-stroke-focus: #3b82f6;
+  --cs-viz-text: #64748b;
+  --cs-viz-text-muted: #94a3b8;
+  --cs-viz-dot: #ef4444;
+  --cs-viz-circle: rgba(59, 130, 246, 0.4);
+  --cs-viz-glass: rgba(0, 0, 0, 0.02);
+  --cs-viz-glow-blue: 0 0 15px rgba(59, 130, 246, 0.3);
+  --cs-viz-glow-red: 0 0 15px rgba(239, 68, 68, 0.3);
+  --cs-log-bg: #f1f5f9;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  font-family:
+    "Inter",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "SimHei",
+    "Heiti SC",
+    "Source Han Sans SC",
+    "Noto Sans CJK SC",
+    "WenQuanYi Micro Hei",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--cs-bg-primary);
+  color: var(--cs-text-primary);
+  /* overflow: hidden; Removed to allow scrolling in responsive mode */
+  overflow-y: auto;
+  user-select: none;
+}
+
+/* Card base */
+.cs-card {
+  background: var(--cs-bg-card);
+  border: 1px solid var(--cs-border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.cs-card:hover {
+  border-color: var(--cs-accent-blue);
+}
+
+/* Glow effect for active elements */
+.cs-glow {
+  box-shadow: 0 0 20px rgba(79, 140, 255, 0.15);
+}
+
+/* Mono text for data values */
+.cs-mono {
+  font-family: "JetBrains Mono", "Cascadia Code", "Consolas", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cs-border);
+  border-radius: 3px;
+}
+
+/* ─── Background Image Layer ─────────────────────────────── */
+.app-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  display: none;
+}
+
+html.has-bg .app-bg-wrapper {
+  display: block;
+}
+
+.app-bg {
+  position: absolute;
+  /* Extend beyond edges so blur doesn't show transparent fringe */
+  inset: -40px;
+  background-image: var(--cs-bg-image);
+  background-size: var(--cs-bg-size);
+  background-position: var(--cs-bg-position);
+  background-repeat: var(--cs-bg-repeat);
+  filter: brightness(var(--cs-bg-brightness)) blur(var(--cs-bg-blur));
+  transition: filter 0.3s ease;
+}
+
+/* When background image is active, make app-root transparent so bg shows through */
+html.has-bg .app-root {
+  background-color: transparent !important;
+}
+
+/* ─── Glass / Frosted Panel Effect ───────────────────────── */
+/* backdrop-filter blurs the fixed bg layer behind — requires no stacking context between card and bg */
+[data-glass='true'] .cs-card,
+[data-glass='true'] .cs-dialog-panel {
+  background: rgba(var(--cs-card-rgb), var(--cs-glass-opacity)) !important;
+  backdrop-filter: blur(var(--cs-glass-blur)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--cs-glass-blur)) saturate(1.4);
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-glass='true'][data-theme='light'] .cs-card,
+[data-glass='true'][data-theme='light'] .cs-dialog-panel {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Nav sidebar glass */
+[data-glass='true'] .app-nav {
+  background: rgba(var(--cs-card-rgb), var(--cs-glass-opacity)) !important;
+  backdrop-filter: blur(var(--cs-glass-blur)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--cs-glass-blur)) saturate(1.4);
+}
+
+/* Top header glass */
+[data-glass='true'] .app-header {
+  background: rgba(var(--cs-card-rgb), var(--cs-glass-opacity)) !important;
+  backdrop-filter: blur(var(--cs-glass-blur)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--cs-glass-blur)) saturate(1.4);
+}
+
+/* Main content area transparent so bg shows through to cards */
+[data-glass='true'] .app-main {
+  background: transparent !important;
+}
+
+/* ─── OBS Overlay Mode ───────────────────────────────────────── */
+/* Applied when the page is loaded as an OBS Browser Source overlay.
+   Every element must be transparent so only the canvas drawings are visible.
+   当页面作为 OBS Browser Source 覆盖层加载时，所有元素背景必须透明。 */
+html.overlay-mode,
+html.overlay-mode body {
+  background: transparent !important;
+}
