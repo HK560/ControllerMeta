@@ -1,0 +1,321 @@
+{
+  "identifier": "ControllerMeta",
+  "formatVersion": "1.0.0",
+  "exportKind": "curve_transfer",
+  "exportTime": "2026-04-06T09:38:40.969Z",
+  "itemCount": 5,
+  "items": [
+    {
+      "curve": {
+        "id": "curve_52493162-03f7-41e8-9f89-8f6835b0b1e8",
+        "name": "补偿 折线 1 -> 贝塞尔 1",
+        "kind": "polyline",
+        "color": "#fb923c",
+        "visible": true,
+        "createdAt": "2026-04-06T09:14:20.512Z",
+        "updatedAt": "2026-04-06T09:14:20.512Z",
+        "sourceMeta": {
+          "kind": "compensation",
+          "description": "折线 1 -> 贝塞尔 1",
+          "sourceCurveIds": [
+            "curve_875ba542-f924-4c21-9e07-a9fba47e932c",
+            "curve_5406d405-4435-441f-bcac-0408235811e5"
+          ]
+        },
+        "innerDeadzone": 0,
+        "outerDeadzone": 0,
+        "deadzoneAdjustMode": "compress",
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 40.25,
+            "y": 13.547
+          },
+          {
+            "x": 57.75,
+            "y": 31.3
+          },
+          {
+            "x": 75.5,
+            "y": 83.241
+          },
+          {
+            "x": 100,
+            "y": 100
+          }
+        ],
+        "basePoints": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 40.25,
+            "y": 13.547
+          },
+          {
+            "x": 57.75,
+            "y": 31.3
+          },
+          {
+            "x": 75.5,
+            "y": 83.241
+          },
+          {
+            "x": 100,
+            "y": 100
+          }
+        ]
+      },
+      "libraryEntryId": "library_a5f9eb14-27d7-4890-966c-78a2b91f9d7d",
+      "savedAt": "2026-04-06T09:16:53.206Z",
+      "note": ""
+    },
+    {
+      "curve": {
+        "id": "curve_import_3adfb9ae-c96b-4e1c-a904-8ea534b829fa",
+        "name": "贝塞尔 1",
+        "kind": "bezier",
+        "color": "#facc15",
+        "visible": true,
+        "createdAt": "2026-04-06T03:57:26.900Z",
+        "updatedAt": "2026-04-06T03:59:11.285Z",
+        "sourceMeta": {
+          "kind": "manual",
+          "description": "Manual bezier curve"
+        },
+        "innerDeadzone": 0,
+        "outerDeadzone": 0,
+        "deadzoneAdjustMode": "compress",
+        "bezier": {
+          "p1": {
+            "x": 74.566,
+            "y": 32.595
+          },
+          "p2": {
+            "x": 42.017,
+            "y": 89.127
+          }
+        }
+      },
+      "libraryEntryId": "library_96f417a3-8314-4f14-95e0-7865eb8f3664",
+      "savedAt": "2026-04-06T03:59:11.285Z",
+      "note": ""
+    },
+    {
+      "curve": {
+        "id": "curve_7e6a7226-1a16-4e65-80b1-783fa734d2d0",
+        "name": "贝塞尔 1",
+        "kind": "bezier",
+        "color": "#facc15",
+        "visible": true,
+        "createdAt": "2026-04-06T03:57:26.900Z",
+        "updatedAt": "2026-04-06T03:57:33.291Z",
+        "sourceMeta": {
+          "kind": "manual",
+          "description": "Manual bezier curve"
+        },
+        "innerDeadzone": 0,
+        "outerDeadzone": 0,
+        "deadzoneAdjustMode": "compress",
+        "bezier": {
+          "p1": {
+            "x": 74.566,
+            "y": 32.595
+          },
+          "p2": {
+            "x": 42.017,
+            "y": 89.127
+          }
+        }
+      },
+      "libraryEntryId": "library_cf685af5-c2dc-4a08-8952-a5d0ad8331a7",
+      "savedAt": "2026-04-06T03:57:33.911Z",
+      "note": ""
+    },
+    {
+      "curve": {
+        "id": "curve_import_100b6fa9-a53f-4311-8d7b-6202d6f75afd_load_1775447796921",
+        "name": "213",
+        "kind": "polyline",
+        "color": "#4f8cff",
+        "visible": true,
+        "createdAt": "2026-04-06T03:56:36.921Z",
+        "updatedAt": "2026-04-06T03:56:55.337Z",
+        "sourceMeta": {
+          "kind": "library",
+          "description": "贝塞尔 1 · 转换结果"
+        },
+        "innerDeadzone": 2.235,
+        "outerDeadzone": 0,
+        "deadzoneAdjustMode": "compress",
+        "points": [
+          {
+            "x": 2.235,
+            "y": 0
+          },
+          {
+            "x": 9.277,
+            "y": 4.614
+          },
+          {
+            "x": 18.034,
+            "y": 7.279
+          },
+          {
+            "x": 32.69,
+            "y": 5.566
+          },
+          {
+            "x": 39.542,
+            "y": 11.276
+          },
+          {
+            "x": 50.583,
+            "y": 11.466
+          },
+          {
+            "x": 80.467,
+            "y": 26.123
+          },
+          {
+            "x": 100,
+            "y": 100
+          }
+        ],
+        "basePoints": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 7.203,
+            "y": 4.614
+          },
+          {
+            "x": 16.16,
+            "y": 7.279
+          },
+          {
+            "x": 31.151,
+            "y": 5.566
+          },
+          {
+            "x": 38.16,
+            "y": 11.276
+          },
+          {
+            "x": 49.453,
+            "y": 11.466
+          },
+          {
+            "x": 80.02,
+            "y": 26.123
+          },
+          {
+            "x": 100,
+            "y": 100
+          }
+        ]
+      },
+      "libraryEntryId": "library_73c1b17e-16b4-42c7-b4a7-a9a8ad57b737",
+      "savedAt": "2026-04-06T03:56:57.665Z",
+      "note": ""
+    },
+    {
+      "curve": {
+        "id": "curve_import_100b6fa9-a53f-4311-8d7b-6202d6f75afd",
+        "name": "贝塞尔 1 · 转换结果",
+        "kind": "polyline",
+        "color": "#4f8cff",
+        "visible": true,
+        "createdAt": "2026-04-06T03:54:21.540Z",
+        "updatedAt": "2026-04-06T03:56:26.821Z",
+        "sourceMeta": {
+          "kind": "conversion",
+          "description": "贝塞尔 1",
+          "sourceCurveIds": [
+            "curve_3be94471-0763-43a8-9029-b8d1123373c3"
+          ]
+        },
+        "innerDeadzone": 2.235,
+        "outerDeadzone": 0,
+        "deadzoneAdjustMode": "compress",
+        "points": [
+          {
+            "x": 2.235,
+            "y": 0
+          },
+          {
+            "x": 9.277,
+            "y": 4.614
+          },
+          {
+            "x": 18.034,
+            "y": 7.279
+          },
+          {
+            "x": 32.69,
+            "y": 5.566
+          },
+          {
+            "x": 39.542,
+            "y": 11.276
+          },
+          {
+            "x": 50.583,
+            "y": 11.466
+          },
+          {
+            "x": 80.467,
+            "y": 26.123
+          },
+          {
+            "x": 100,
+            "y": 100
+          }
+        ],
+        "basePoints": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 7.203,
+            "y": 4.614
+          },
+          {
+            "x": 16.16,
+            "y": 7.279
+          },
+          {
+            "x": 31.151,
+            "y": 5.566
+          },
+          {
+            "x": 38.16,
+            "y": 11.276
+          },
+          {
+            "x": 49.453,
+            "y": 11.466
+          },
+          {
+            "x": 80.02,
+            "y": 26.123
+          },
+          {
+            "x": 100,
+            "y": 100
+          }
+        ]
+      },
+      "libraryEntryId": "library_602da261-88a1-45c2-959a-e6904a0653a8",
+      "savedAt": "2026-04-06T03:56:26.821Z",
+      "note": ""
+    }
+  ]
+}
